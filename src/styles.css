@@ -1,0 +1,128 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-spice: var(--spice);
+  --color-saffron: var(--saffron);
+  --font-display: var(--font-display);
+
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-slide-up: slide-up 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-pop: pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-bounce-in: bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes bounce-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+:root {
+  --radius: 1rem;
+  --font-display: "Poppins", system-ui, sans-serif;
+
+  --background: oklch(0.985 0.012 75);
+  --foreground: oklch(0.20 0.03 30);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.03 30);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.03 30);
+
+  /* Appetizing tomato/chilli red */
+  --primary: oklch(0.62 0.22 27);
+  --primary-foreground: oklch(0.99 0.01 75);
+  --primary-glow: oklch(0.72 0.20 40);
+
+  /* Saffron gold */
+  --saffron: oklch(0.80 0.17 75);
+  --spice: oklch(0.65 0.20 50);
+
+  --secondary: oklch(0.96 0.02 70);
+  --secondary-foreground: oklch(0.25 0.03 30);
+  --muted: oklch(0.96 0.015 70);
+  --muted-foreground: oklch(0.50 0.03 40);
+  --accent: oklch(0.93 0.05 75);
+  --accent-foreground: oklch(0.25 0.05 30);
+
+  --success: oklch(0.65 0.17 145);
+  --success-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.60 0.24 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.015 70);
+  --input: oklch(0.92 0.015 70);
+  --ring: oklch(0.62 0.22 27);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.62 0.22 27) 0%, oklch(0.72 0.20 50) 60%, oklch(0.80 0.17 75) 100%);
+  --gradient-warm: linear-gradient(180deg, oklch(0.99 0.015 75) 0%, oklch(0.96 0.03 70) 100%);
+  --gradient-card: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.98 0.012 75) 100%);
+  --shadow-soft: 0 4px 20px -8px oklch(0.62 0.22 27 / 0.18);
+  --shadow-elevated: 0 20px 50px -20px oklch(0.62 0.22 27 / 0.30);
+  --shadow-glow: 0 0 40px oklch(0.72 0.20 40 / 0.35);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { font-family: var(--font-display); }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+}
