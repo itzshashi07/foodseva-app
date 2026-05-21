@@ -38,7 +38,7 @@ function Home() {
           <div className="text-center max-w-3xl mx-auto animate-fade-in">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent text-xs font-semibold mb-4">
               <Sparkles className="w-3 h-3 text-primary" />
-              Bihar ka pehla rural food delivery app
+                    Rural food delivery app
             </div>
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
               Garam khana,
@@ -48,9 +48,9 @@ function Home() {
               </span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
-              Apne gaon ke best restaurants se order karein. WhatsApp pe confirm hoga,
-              <br className="hidden sm:block" /> garam-garam delivery milegi. Bas 3 tap mein!
-            </p>
+  Ab ghar baithe enjoy karein apne pasand ka khana 🍔. Nearby restaurants se order karein,
+  <br className="hidden sm:block" /> WhatsApp par instant confirmation aur doorstep delivery — sirf kuch hi taps mein!
+</p>
           </div>
 
           {/* Location selector */}
